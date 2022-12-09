@@ -11,7 +11,7 @@ function Movies({ searchValue }) {
     const fetchData = async () => {
       try {
         const data = await axios.get(
-          ` http://www.omdbapi.com/?s=${searchValue}&apikey=c8eb1d2a`
+          ` https://www.omdbapi.com/?s=${searchValue}&apikey=c8eb1d2a`
         );
         data.data.Search && setMovies(data.data.Search);
       } catch (error) {}

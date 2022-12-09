@@ -1,0 +1,65 @@
+@mixin tablet {
+    @media screen and (481px <= width <= 768px) {
+        @content
+      }
+};
+@mixin mobile {
+    @media screen and (200px <= width <=  480px) {
+        @content
+      }
+};
+
+.search-container{
+    padding: 77px;
+    background-color: #FFF;
+
+    @include mobile{
+        padding: 30px;
+    }
+
+    .search-wrapper{
+        width: 100%;
+
+        .input-section{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        
+        
+            label{
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 31px;
+                color: #000000;
+        
+                @include mobile{
+                    font-size: 16px;
+                    line-height: 21px;
+                }
+            
+            }
+        
+            input{
+                height: 54px;
+                font-size: 24px;
+                padding-left: 10px;
+
+                &::placeholder{
+                    font-size: 24px;
+                }
+        
+                @include mobile{
+                    height: 34px;
+                    font-size: 16px;
+
+                    &::placeholder{
+                        font-size: 16px;
+                    }
+                }
+            
+            }
+        }
+    }
+}
+

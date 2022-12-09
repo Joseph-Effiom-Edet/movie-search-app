@@ -1,0 +1,52 @@
+@mixin tablet {
+    @media screen and (481px <= width <= 768px) {
+        @content
+      }
+};
+@mixin mobile {
+    @media screen and (200px <= width <=  480px) {
+        @content
+      }
+};
+
+.nav-container{
+    background-color: #292929;
+    height: 140px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 77px;
+
+    @include tablet{
+        justify-content: center;
+    }
+
+    @include mobile{
+        height: 67px;
+        justify-content: center;
+    }
+
+    .nav-wrapper{
+        width: 193px;
+        height: 60px;
+        border: 1px solid #FFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile{
+            width: 108px;
+            height: 33.58px;
+        }
+
+        img{
+            height: 32.94px;
+            width: 156.7px;
+
+            @include mobile{
+                width: 87.68px;
+                height: 18.43px;
+            }
+        }
+    }
+}

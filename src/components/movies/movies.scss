@@ -1,0 +1,95 @@
+@mixin tablet {
+    @media screen and (481px <= width <= 768px) {
+        @content
+      }
+};
+@mixin mobile {
+    @media screen and (200px <= width <=  480px) {
+        @content
+      }
+};
+
+.movies-container{
+    padding-left: 77px;
+    background-color: #FFF;
+
+    @include mobile{
+        padding-left: 30px;
+    }
+
+    .movies-wrapper{
+        width: 100%;
+
+        .movie-list-section{
+            padding-top: 40px ;
+
+            .movie-list-sub-section{
+
+                &:last-child{
+                    margin-top: 40px;
+                }
+
+                .movie-category-name{
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 31px;
+
+                    @include mobile{
+                        font-size: 18px;
+                    }
+                    
+                }
+
+                .movies{
+                    padding-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+                    overflow-x: auto;
+                    flex-wrap: nowrap;
+                    &::-webkit-scrollbar {
+                        width: 10px;
+                    }
+                    
+                    @include mobile{
+                        padding-top: 5px;
+                    }
+
+                    .single-movie{
+                        position: relative;
+
+
+                        img{
+                            width: 300px;
+                            height: 300px;
+
+                            @include mobile{
+                                width: 200px;
+                                height: 200px;
+                            }
+                        }
+
+                        span{
+                            position: absolute;
+                            top: 150px;
+                            left: 25px;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 24px;
+                            line-height: 31px;
+                            text-align: center;
+                            color: #FFFFFF;
+
+                            @include mobile{
+                                top: 75px;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
